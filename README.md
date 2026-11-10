@@ -35,6 +35,6 @@ pnpm preview
 
 已配置 `.github/workflows/deploy.yml`。在仓库 Settings → Pages → Build and deployment 中将 Source 设为 GitHub Actions。推送到 main 后自动构建与发布。
 
-预期访问地址：https://follisher.github.io/chaosorder/
+预期访问地址：https://chaosorder.app/
 
-部署构建使用 `SITE_BASE=/chaosorder/`，本地开发仍使用根路径。
+部署构建使用 `SITE_BASE=/`，本地开发仍使用根路径。

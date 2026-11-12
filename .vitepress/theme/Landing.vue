@@ -2,6 +2,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { downloads } from './downloads'
+import FeatureModule from './FeatureModule.vue'
+import { modules } from './modules'
 const { page } = useData()
 const menu = ref(false)
 const legal = ref('')
@@ -65,8 +67,9 @@ onUnmounted(() => observer?.disconnect())
     </section>
     <section id="explore" class="features section-wrap reveal">
       <div class="section-heading"><div><p class="eyebrow caption-3">01 / 探索万象</p><h2 class="heading-2">一处天地，<br>多重视角。</h2></div><p class="body-3 muted">从一张命盘，到一页古籍。<br>让不同的研习路径，在这里交汇。</p></div>
-      <div class="feature-grid"><article v-for="f in features" :key="f[0]" class="feature"><div class="feature-top caption-3"><span>{{ f[0] }}</span><span class="glyphs">{{ f[4] }}</span></div><h3 class="heading-5">{{ f[1] }}</h3><p class="title-3 benefit">{{ f[2] }}</p><p class="body-6 muted">{{ f[3] }}</p></article></div>
+      <div class="feature-grid"><article v-for="(f, i) in features" :key="f[0]" class="feature"><div class="feature-top caption-3"><span>{{ f[0] }}</span><span class="glyphs">{{ f[4] }}</span></div><h3 class="heading-5">{{ f[1] }}</h3><p class="title-3 benefit">{{ f[2] }}</p><p class="body-6 muted">{{ f[3] }}</p><a class="feature-more button-sm" :href="`#feature-${modules[i].id}`" :aria-label="`探索更多：${f[1]}`">探索更多 <span aria-hidden="true">↗</span></a></article></div>
     </section>
+    <div class="feature-details"><FeatureModule v-for="(module, i) in modules" :key="module.id" :module="module" :number="i + 1" /></div>
     <section class="manifesto section-wrap"><p class="eyebrow caption-3">在变化里，寻找脉络</p><h2 class="tagline heading-2"><span v-for="(word, i) in ['让','繁复的','万象，']" :key="i" :style="{ transitionDelay: `${i * 100}ms` }">{{ word }}</span><br><span v-for="(word, i) in ['成为','可以探索的','秩序。']" :key="i + 3" :style="{ transitionDelay: `${(i + 3) * 100}ms` }">{{ word }}</span></h2><p class="body-3 muted">保留对未知的好奇，也保留独立思考的空间。</p></section>
     <section id="journey" class="journey section-wrap reveal"><div class="section-heading"><div><p class="eyebrow caption-3">02 / 从此刻开始</p><h2 class="heading-2">研习，自有路径。</h2></div></div><div class="steps"><article v-for="(step, i) in [['选择一个视角','从八字、紫微或你熟悉的工具开始。'],['展开一张盘面','录入所需信息，观察盘面结构与关系。'],['回到典籍与思考','对照古籍，记录理解，继续自己的探索。']]" :key="i"><span class="step-number heading-4">0{{ i + 1 }}</span><h3 class="heading-6">{{ step[0] }}</h3><p class="body-6 muted">{{ step[1] }}</p></article></div></section>
     <section id="faq" class="faq section-wrap reveal"><div><p class="eyebrow caption-3">03 / 你可能想知道</p><h2 class="heading-2">一些解答。</h2></div><div class="questions"><details v-for="f in faqs" :key="f[0]"><summary class="title-3">{{ f[0] }}<span aria-hidden="true">＋</span></summary><p class="body-6 muted">{{ f[1] }}</p></details></div></section>

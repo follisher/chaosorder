@@ -43,6 +43,6 @@ pnpm preview
 
 六个功能卡片的“探索更多”链接跳转到各自的详情模块。桌面端左侧为随幻灯同步变化的标题、介绍、要点与翻页控件，右侧为放大的 iPhone 展示；日夜切换位于手机上方，移动端上下排列。
 
-编辑 `.vitepress/theme/modules.ts` 可调整模块介绍及 `slides`。每张幻灯的 `day`、`night` 分别填写真实日间、夜间截图路径，例如 `/screenshots/bazi-overview-day.png`，对应图片放入 `public/screenshots/`。幻灯数量随数组长度变化；无需修改组件。空路径显示待补充状态，图片加载失败时支持重试。
+编辑 `.vitepress/theme/modules.ts` 可调整模块介绍及 `slides`。每张幻灯的 `day`、`night` 分别填写真实日间、夜间截图路径，例如 `/screenshots/bazi-overview-day.webp`，对应图片放入 `public/screenshots/`。幻灯数量随数组长度变化；无需修改组件。空路径显示待补充状态，图片加载失败时支持重试。
 
 展示支持上一张、下一张、分页圆点、方向键、触屏左右滑动及手动播放／暂停。自动播放仅在模块可见时运行，悬停、键盘聚焦和后台标签页会暂停；减少动态效果偏好下禁用自动播放。

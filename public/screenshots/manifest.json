@@ -1,252 +1,252 @@
 [
   {
     "source": "IMG_7921.png",
-    "file": "bazi-01-day.png",
+    "file": "bazi-01-day.webp",
     "module": "bazi",
     "mode": "day",
     "title": "命局研习"
   },
   {
     "source": "IMG_7903.png",
-    "file": "bazi-01-night.png",
+    "file": "bazi-01-night.webp",
     "module": "bazi",
     "mode": "night",
     "title": "命局研习"
   },
   {
     "source": "IMG_7922.png",
-    "file": "bazi-02-day.png",
+    "file": "bazi-02-day.webp",
     "module": "bazi",
     "mode": "day",
     "title": "流运对照"
   },
   {
     "source": "IMG_7904.png",
-    "file": "bazi-02-night.png",
+    "file": "bazi-02-night.webp",
     "module": "bazi",
     "mode": "night",
     "title": "流运对照"
   },
   {
     "source": "IMG_7923.png",
-    "file": "bazi-03-day.png",
+    "file": "bazi-03-day.webp",
     "module": "bazi",
     "mode": "day",
     "title": "五运六气"
   },
   {
     "source": "IMG_7905.png",
-    "file": "bazi-03-night.png",
+    "file": "bazi-03-night.webp",
     "module": "bazi",
     "mode": "night",
     "title": "五运六气"
   },
   {
     "source": "IMG_7926.png",
-    "file": "ziwei-01-day.png",
+    "file": "ziwei-01-day.webp",
     "module": "ziwei",
     "mode": "day",
     "title": "综合盘面"
   },
   {
     "source": "IMG_7906.png",
-    "file": "ziwei-01-night.png",
+    "file": "ziwei-01-night.webp",
     "module": "ziwei",
     "mode": "night",
     "title": "综合盘面"
   },
   {
     "source": "IMG_7925.png",
-    "file": "ziwei-02-day.png",
+    "file": "ziwei-02-day.webp",
     "module": "ziwei",
     "mode": "day",
     "title": "星曜分布"
   },
   {
     "source": "IMG_7908.png",
-    "file": "ziwei-02-night.png",
+    "file": "ziwei-02-night.webp",
     "module": "ziwei",
     "mode": "night",
     "title": "星曜分布"
   },
   {
     "source": "IMG_7924.png",
-    "file": "ziwei-04-day.png",
+    "file": "ziwei-04-day.webp",
     "module": "ziwei",
     "mode": "day",
     "title": "四化关系"
   },
   {
     "source": "IMG_7910.png",
-    "file": "ziwei-04-night.png",
+    "file": "ziwei-04-night.webp",
     "module": "ziwei",
     "mode": "night",
     "title": "四化关系"
   },
   {
     "source": "IMG_7929.png",
-    "file": "qimen-01-day.png",
+    "file": "qimen-01-day.webp",
     "module": "qimen",
     "mode": "day",
     "title": "阴盘奇门"
   },
   {
     "source": "IMG_7912.png",
-    "file": "qimen-01-night.png",
+    "file": "qimen-01-night.webp",
     "module": "qimen",
     "mode": "night",
     "title": "阴盘奇门"
   },
   {
     "source": "IMG_7928.png",
-    "file": "qimen-02-day.png",
+    "file": "qimen-02-day.webp",
     "module": "qimen",
     "mode": "day",
     "title": "转盘奇门"
   },
   {
     "source": "IMG_7913.png",
-    "file": "qimen-02-night.png",
+    "file": "qimen-02-night.webp",
     "module": "qimen",
     "mode": "night",
     "title": "转盘奇门"
   },
   {
     "source": "IMG_7931.png",
-    "file": "qimen-03-day.png",
+    "file": "qimen-03-day.webp",
     "module": "qimen",
     "mode": "day",
     "title": "宫位解读"
   },
   {
     "source": "IMG_7914.png",
-    "file": "qimen-03-night.png",
+    "file": "qimen-03-night.webp",
     "module": "qimen",
     "mode": "night",
     "title": "宫位解读"
   },
   {
     "source": "IMG_7930.png",
-    "file": "qimen-04-day.png",
+    "file": "qimen-04-day.webp",
     "module": "qimen",
     "mode": "day",
     "title": "阴盘宫位解读"
   },
   {
     "source": "IMG_7919.png",
-    "file": "liuren-liuyao-01-day.png",
+    "file": "liuren-liuyao-01-day.webp",
     "module": "liuren-liuyao",
     "mode": "day",
     "title": "大六壬"
   },
   {
     "source": "IMG_7917.png",
-    "file": "liuren-liuyao-01-night.png",
+    "file": "liuren-liuyao-01-night.webp",
     "module": "liuren-liuyao",
     "mode": "night",
     "title": "大六壬"
   },
   {
     "source": "IMG_7920.png",
-    "file": "liuren-liuyao-02-day.png",
+    "file": "liuren-liuyao-02-day.webp",
     "module": "liuren-liuyao",
     "mode": "day",
     "title": "小六壬"
   },
   {
     "source": "IMG_7918.png",
-    "file": "liuren-liuyao-02-night.png",
+    "file": "liuren-liuyao-02-night.webp",
     "module": "liuren-liuyao",
     "mode": "night",
     "title": "小六壬"
   },
   {
     "source": "IMG_7932.png",
-    "file": "liuren-liuyao-03-day.png",
+    "file": "liuren-liuyao-03-day.webp",
     "module": "liuren-liuyao",
     "mode": "day",
     "title": "六爻卦象"
   },
   {
     "source": "IMG_7915.png",
-    "file": "liuren-liuyao-03-night.png",
+    "file": "liuren-liuyao-03-night.webp",
     "module": "liuren-liuyao",
     "mode": "night",
     "title": "六爻卦象"
   },
   {
     "source": "IMG_7916.png",
-    "file": "liuren-liuyao-04-night.png",
+    "file": "liuren-liuyao-04-night.webp",
     "module": "liuren-liuyao",
     "mode": "night",
     "title": "六爻卦辞"
   },
   {
     "source": "IMG_7927.png",
-    "file": "qizheng-01-day.png",
+    "file": "qizheng-01-day.webp",
     "module": "qizheng",
     "mode": "day",
     "title": "七政星盘"
   },
   {
     "source": "IMG_7911.png",
-    "file": "qizheng-01-night.png",
+    "file": "qizheng-01-night.webp",
     "module": "qizheng",
     "mode": "night",
     "title": "七政星盘"
   },
   {
     "source": "IMG_7934.png",
-    "file": "bazi-04-day.png",
+    "file": "bazi-04-day.webp",
     "module": "bazi",
     "mode": "day",
     "title": "流运层级"
   },
   {
     "source": "IMG_7937.png",
-    "file": "bazi-04-night.png",
+    "file": "bazi-04-night.webp",
     "module": "bazi",
     "mode": "night",
     "title": "流运层级"
   },
   {
     "source": "IMG_7935.png",
-    "file": "bazi-05-day.png",
+    "file": "bazi-05-day.webp",
     "module": "bazi",
     "mode": "day",
     "title": "大运流年总览"
   },
   {
     "source": "IMG_7936.png",
-    "file": "bazi-05-night.png",
+    "file": "bazi-05-night.webp",
     "module": "bazi",
     "mode": "night",
     "title": "大运流年总览"
   },
   {
     "source": "IMG_7964.png",
-    "file": "books-01-day.png",
+    "file": "books-01-day.webp",
     "module": "books",
     "mode": "day",
     "title": "分类书架"
   },
   {
     "source": "IMG_7965.png",
-    "file": "books-01-night.png",
+    "file": "books-01-night.webp",
     "module": "books",
     "mode": "night",
     "title": "分类书架"
   },
   {
     "source": "IMG_7968.png",
-    "file": "books-02-day.png",
+    "file": "books-02-day.webp",
     "module": "books",
     "mode": "day",
     "title": "摘录笔记"
   },
   {
     "source": "IMG_7966.png",
-    "file": "books-02-night.png",
+    "file": "books-02-night.webp",
     "module": "books",
     "mode": "night",
     "title": "摘录笔记"

@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useData, withBase } from 'vitepress'
+import { ref, watch, nextTick, onMounted, onUnmounted } from 'vue'
+import { Content, useData, withBase } from 'vitepress'
 import { downloads } from './downloads'
 import FeatureModule from './FeatureModule.vue'
 import { modules } from './modules'
@@ -28,6 +28,12 @@ onMounted(() => {
   observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }), { threshold: .2 })
   document.querySelectorAll('.reveal, .tagline span').forEach(el => observer.observe(el))
 })
+watch(() => page.value.relativePath, async () => {
+  menu.value = false
+  legal.value = ''
+  await nextTick()
+  document.querySelectorAll('.reveal, .tagline span').forEach(el => observer?.observe(el))
+})
 onUnmounted(() => observer?.disconnect())
 </script>
 
@@ -36,13 +42,18 @@ onUnmounted(() => observer?.disconnect())
   <header class="nav">
     <a :href="withBase('/')" class="brand title-3" aria-label="混沌与秩序首页"><img :src="withBase('/app-icon.png')" alt="" width="32" height="32"> <span>混沌与秩序</span></a>
     <nav aria-label="主导航" :class="{ open: menu }">
-      <a class="title-4" href="#explore" @click="menu = false">探索功能</a><a class="title-4" href="#journey" @click="menu = false">开始研习</a><a class="title-4" href="#faq" @click="menu = false">常见问题</a>
+      <a class="title-4" :href="withBase('/') + '#explore'" @click="menu = false">探索功能</a><a class="title-4" :href="withBase('/') + '#journey'" @click="menu = false">开始研习</a><a class="title-4" :href="withBase('/') + '#faq'" @click="menu = false">常见问题</a>
     </nav>
-    <a class="nav-download button-sm" href="#download">获取 App <span>↗</span></a>
+    <a class="nav-download button-sm" :href="withBase('/') + '#download'">获取 App <span>↗</span></a>
     <button class="menu-toggle button-md" @click="menu = !menu" :aria-expanded="menu" aria-label="切换导航">{{ menu ? '关闭' : '菜单' }}</button>
   </header>
   <main id="main">
     <section v-if="page.isNotFound" class="error-page"><p class="caption-1">404 · 星图之外</p><h1 class="heading-2">这里还没有留下轨迹。</h1><a class="button button-md" :href="withBase('/')">返回首页</a></section>
+    <article v-else-if="page.frontmatter.layout === 'privacy'" class="privacy-page section-wrap">
+      <a class="privacy-back button-sm" :href="withBase('/')">← 返回首页</a>
+      <Content class="privacy-content" />
+      <a class="button sponsor-save button-md" :href="withBase('/')">返回混沌与秩序首页 <span aria-hidden="true">↗</span></a>
+    </article>
     <template v-else>
     <section class="hero section-wrap">
       <div class="hero-copy">
@@ -89,6 +100,6 @@ onUnmounted(() => observer?.disconnect())
     </section>
     </template>
   </main>
-  <footer class="section-wrap"><div class="footer-top"><a class="brand title-3" :href="withBase('/')"><img :src="withBase('/app-icon.png')" width="32" height="32" alt="">混沌与秩序</a><p class="caption-2 muted">传统智慧，当代表达。</p><div class="footer-links"><a class="caption-2" :href="withBase('/') + '#sponsor'">赞助支持</a><button class="caption-2" @click="legal = '隐私说明'">隐私说明</button><button class="caption-2" @click="legal = '使用说明'">使用说明</button></div></div><div class="footer-bottom caption-2 muted"><span>© {{ new Date().getFullYear() }} ChaosOrder</span><span>仰观天文，俯察地理。</span></div></footer>
-  <div v-if="legal" class="modal-backdrop" @click.self="legal = ''" @keydown.esc="legal = ''"><section role="dialog" aria-modal="true" aria-labelledby="legal-title" class="legal-modal"><h2 id="legal-title" class="heading-5">{{ legal }}</h2><p class="body-3 muted">{{ legal === '隐私说明' ? '此落地页不包含注册表单、广告追踪或分析脚本。App 的数据处理方式与隐私政策，请以正式发布版本中的政策为准。正式政策链接将在发布时补充。' : '本页介绍混沌与秩序的功能与下载状态。应用内容用于传统文化学习与研究，具体功能及使用条款以正式发布版本为准。' }}</p><button autofocus class="button primary button-md" @click="legal = ''">关闭</button></section></div>
+  <footer class="section-wrap"><div class="footer-top"><a class="brand title-3" :href="withBase('/')"><img :src="withBase('/app-icon.png')" width="32" height="32" alt="">混沌与秩序</a><p class="caption-2 muted">传统智慧，当代表达。</p><div class="footer-links"><a class="caption-2" :href="withBase('/') + '#sponsor'">赞助支持</a><a class="caption-2" :href="withBase('/privacy.html')" :aria-current="page.frontmatter.layout === 'privacy' ? 'page' : undefined">隐私说明</a><button class="caption-2" @click="legal = '使用说明'">使用说明</button></div></div><div class="footer-bottom caption-2 muted"><span>© {{ new Date().getFullYear() }} ChaosOrder</span><span>仰观天文，俯察地理。</span></div></footer>
+  <div v-if="legal" class="modal-backdrop" @click.self="legal = ''" @keydown.esc="legal = ''"><section role="dialog" aria-modal="true" aria-labelledby="legal-title" class="legal-modal"><h2 id="legal-title" class="heading-5">{{ legal }}</h2><p class="body-3 muted">本页介绍混沌与秩序的功能与下载状态。应用内容用于传统文化学习与研究，具体功能及使用条款以正式发布版本为准。</p><button autofocus class="button primary button-md" @click="legal = ''">关闭</button></section></div>
 </template>

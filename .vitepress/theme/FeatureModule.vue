@@ -38,6 +38,25 @@ function touchEnd(e) {
   if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) manualMove(dx < 0 ? 1 : -1)
 }
 watch([index, mode], () => { loadFailed.value = false })
+// Warm only neighboring slides and the other theme of the visible screenshot.
+const warmedImages = new Map()
+function preloadNeighbors() {
+  if (typeof window === 'undefined' || !inView.value) return
+  const slides = availableSlides.value
+  const previous = slides[(index.value - 1 + slides.length) % slides.length]
+  const next = slides[(index.value + 1) % slides.length]
+  const candidates = [previous?.[mode.value], next?.[mode.value], slide.value[mode.value === 'day' ? 'night' : 'day']]
+  for (const path of candidates) {
+    if (!path || path === src.value || warmedImages.has(path)) continue
+    const image = new Image()
+    image.decoding = 'async'
+    image.onerror = () => warmedImages.delete(path)
+    warmedImages.set(path, image)
+    image.src = withBase(path)
+  }
+}
+watch([src, inView], preloadNeighbors, { flush: 'post' })
+
 let timer, observer, media
 function syncMotion(e) { reducedMotion.value = e.matches; if (e.matches) playing.value = false }
 onMounted(() => {
@@ -78,8 +97,8 @@ onUnmounted(() => { clearInterval(timer); observer?.disconnect(); media?.removeE
       <div class="iphone-stage">
         <div class="iphone-frame" :class="`preview-${mode}`" tabindex="0" :aria-label="`${module.title}，${slide.title}，${mode === 'day' ? '日间' : '夜间'}模式。可使用左右方向键切换截图。`" @touchstart.passive="touchStart" @touchend.passive="touchEnd">
           <div class="iphone-screen">
-            <Transition name="screen-fade" mode="out-in">
-              <img v-if="src && !loadFailed" :key="src" class="app-screenshot" :src="withBase(src)" :alt="`${module.title}：${slide.title}，${mode === 'day' ? '日间' : '夜间'}模式截图`" loading="lazy" @error="loadFailed = true">
+            <Transition name="screen-fade">
+              <img v-if="src && !loadFailed" :key="src" class="app-screenshot" :src="withBase(src)" :alt="`${module.title}：${slide.title}，${mode === 'day' ? '日间' : '夜间'}模式截图`" loading="lazy" decoding="async" @error="loadFailed = true">
               <div v-else :key="`${mode}-${index}-empty`" class="screenshot-empty">
                 <img :src="withBase('/app-icon.png')" width="48" height="48" alt="">
                 <p class="title-3">{{ module.title }}</p><span class="empty-divider"></span>

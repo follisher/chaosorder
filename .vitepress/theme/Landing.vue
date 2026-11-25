@@ -15,13 +15,21 @@ const features = [
   ['05', '七政四余', '抬头看星，也低头研习。', '探索星曜与天体的运行，以星盘连接天象与传统文化。', '日 月 金 木'],
   ['06', '随身古籍', '有据可查，才能学得更深。', '从《五行大义》到《六壬大全》，让典籍阅读与术数研习相伴。', '经 史 子 集'],
 ]
+const productTraits = [
+  ['无广告', '让注意力留在盘面。', '没有广告打断，在排盘与研习之间保持专注。'],
+  ['不需要联网', '没有网络，也能排盘。', '安装完成后，核心排盘计算可在本机完成，离线也能继续探索。'],
+  ['不需要登录', '打开 App，就能开始。', '无需注册账号或登录，直接使用排盘工具，管理自己的本地档案。'],
+  ['免费排盘', '把研习的门槛放低。', '免费下载与使用排盘功能，让更多爱好者有机会接触和研习传统术数。'],
+]
 const faqs = [
   ['混沌与秩序是什么？', '一款面向传统术数与星象爱好者的工具应用，整合多种排盘工具及古籍阅读，供学习、研究与文化探索使用。'],
   ['可以使用哪些工具？', 'App 已包含四柱八字、紫微斗数、奇门遁甲、大六壬、六爻、七政四余和古籍阅读等模块，具体功能以安装版本为准。'],
   ['Android 和 iOS 都能下载吗？', downloads.android && downloads.ios ? '可以。iOS 用户可前往 App Store 下载，Android 用户可通过下载入口获取 APK。当前 Android 安装包适用于 ARM64 设备。' : '请查看下方下载区，已开放的平台可直接下载；尚未开放的平台会标注即将上线。'],
+  ['排盘需要联网或登录吗？', '不需要。安装后即可免登录使用核心排盘功能，排盘计算在本机完成。下载、更新 App，以及主动开启的 iCloud 同步需要网络。'],
+  ['排盘收费吗？有广告吗？', '混沌与秩序是免费排盘 App，无广告，也不包含应用内购买。赞助完全自愿。'],
   ['初学者也可以使用吗？', '可以从自己感兴趣的一种术数开始，对照古籍学习盘面与术语。应用提供工具，不替代系统的基础学习。'],
   ['排盘结果应该如何使用？', '请将相关内容用于传统文化学习与研究，不作为医疗、投资或其他重大决策的依据。'],
-  ['版本、价格和设备要求在哪里查看？', '正式发布后，请以对应应用商店或安装包发布说明中的版本、价格和设备要求为准。'],
+  ['版本和设备要求在哪里查看？', '请查看对应应用商店或安装包发布说明中的版本和设备要求。'],
 ]
 let observer
 onMounted(() => {
@@ -60,6 +68,7 @@ onUnmounted(() => observer?.disconnect())
         <p class="eyebrow caption-3"><span class="status-dot"></span> CHAOSORDER · 混沌与秩序</p>
         <h1 class="heading-1">于混沌中，<br>见万象之序。</h1>
         <p class="hero-description body-3">让古老的智慧，拥有当代的表达。<br>集术数排盘、星象探索与古籍阅读于一身，<br class="desktop-break">在方寸之间，展开你的研习天地。</p>
+        <p class="product-promise caption-1">无广告 · 不需要联网 · 不需要登录 · 免费排盘</p>
         <a class="button primary button-md" href="#download">获取混沌与秩序 <span>↗</span></a>
         <p class="availability caption-2">Android & iOS <span> / </span> 下载入口见下方</p>
         <div class="hero-note caption-2"><span class="tiny-orbit">✦</span> 以工具辅助研习，以典籍追溯本源</div>
@@ -75,6 +84,11 @@ onUnmounted(() => observer?.disconnect())
         <div class="chart-label caption-3">天有其时 · 地有其理</div>
       </div>
       <div class="hero-bottom caption-3"><span>传统智慧 / 数字新境</span><a href="#explore">向下探索 ↓</a><span>天地 · 星辰 · 人间</span></div>
+    </section>
+    <section id="product-traits" class="product-traits section-wrap reveal" aria-labelledby="traits-title">
+      <div class="section-heading"><div><p class="eyebrow caption-3">简单开始 · 专注研习</p><h2 id="traits-title" class="heading-2">一款纯粹的<br>免费排盘 App。</h2></div><p class="body-3 muted">无广告、不需要联网、不需要登录。<br>把时间留给探索，让工具回归工具。</p></div>
+      <div class="traits-grid"><article v-for="trait in productTraits" :key="trait[0]" class="trait-card"><p class="trait-label caption-3">{{ trait[0] }}</p><h3 class="heading-6">{{ trait[1] }}</h3><p class="body-6 muted">{{ trait[2] }}</p></article></div>
+      <p class="traits-note caption-2 muted">离线使用指核心排盘功能；下载、更新及可选的 iCloud 同步需要网络。</p>
     </section>
     <section id="explore" class="features section-wrap reveal">
       <div class="section-heading"><div><p class="eyebrow caption-3">01 / 探索万象</p><h2 class="heading-2">一处天地，<br>多重视角。</h2></div><p class="body-3 muted">从一张命盘，到一页古籍。<br>让不同的研习路径，在这里交汇。</p></div>

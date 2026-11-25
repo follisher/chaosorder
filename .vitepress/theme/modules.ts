@@ -13,13 +13,13 @@ export const modules = [
     {"title": "星曜分布", description: "聚焦十二宫中的星曜分布，从主星落宫切入，观察不同宫位的组合，让盘面关系更容易逐一对照。", points: ["主星落宫", "星曜组合", "宫位间对照"], "caption": "查看星曜在十二宫中的分布。", "day": "/screenshots/ziwei-02-day.webp", "night": "/screenshots/ziwei-02-night.webp"},
     {"title": "四化关系", description: "沿着盘面的四化连线查看宫位之间的联系，将禄、权、科、忌放回命盘结构中理解。", points: ["四化连线", "禄权科忌标记", "宫位关联观察"], "caption": "沿着四化连线，对照宫位关系。", "day": "/screenshots/ziwei-04-day.webp", "night": "/screenshots/ziwei-04-night.webp"},
   ] },
-  { id: 'qimen', title: '奇门遁甲', headline: '九宫有序，\n复杂也能细读。', description: '从起局方式到盘面样式，按照自己的研习习惯展开奇门。观察九宫中的结构，在一次次起局与复盘之间积累理解。', points: ['选择不同起局方式', '切换飞盘与转盘样式', '对照盘面进行复盘'], slides: [
-    {"title": "阴盘奇门", description: "在阴盘九宫中查看星、门、神与干支信息，结合盘面外圈及下方时间信息，逐项梳理布局。", points: ["阴盘九宫布局", "星门神与干支", "起局时间信息"], "caption": "在九宫结构中观察阴盘奇门。", "day": "/screenshots/qimen-01-day.webp", "night": "/screenshots/qimen-01-night.webp"},
+  { id: 'qimen', title: '奇门遁甲', headline: '九宫有序，\n复杂也能细读。', description: '支持茅山、置闰、拆补和阴盘排法，按照自己的研习习惯展开奇门。观察九宫中的结构，在起局与复盘之间积累理解。', points: ['茅山与置闰排法', '拆补与阴盘排法', '飞盘与转盘样式'], slides: [
+    {"title": "奇门遁甲", description: "支持茅山、置闰、拆补和阴盘排法。在九宫中查看星、门、神与干支信息，结合起局时间，逐项梳理盘面布局。", points: ["茅山与置闰排法", "拆补与阴盘排法", "星门神与干支信息"], "caption": "结合茅山、置闰、拆补和阴盘排法，展开奇门研习。", "day": "/screenshots/qimen-01-day.webp", "night": "/screenshots/qimen-01-night.webp"},
     {"title": "转盘奇门", description: "展开转盘奇门的九宫盘面，查看各宫中的门、星、神与干支，结合下方信息进行对照研习。", points: ["转盘九宫盘面", "各宫信息对照", "干支与时令信息"], "caption": "查看转盘盘面中的门、星与神。", "day": "/screenshots/qimen-02-day.webp", "night": "/screenshots/qimen-02-night.webp"},
     {"title": "宫位解读", description: "从盘面进入具体宫位，查看宫位、宫支、九星与八门等说明，把抽象术语与当前布局对应起来。", points: ["宫位与宫支说明", "九星与八门解读", "盘面与说明对照"], "caption": "在盘面之外，进一步阅读宫位说明。", "day": "/screenshots/qimen-03-day.webp", "night": "/screenshots/qimen-03-night.webp"},
     {"title": "阴盘宫位解读", description: "结合阴盘布局查看具体宫位的说明，在宫位、星门和传统取象之间逐步建立联系。", points: ["阴盘宫位说明", "星门信息", "传统取象参考"], "caption": "结合阴盘布局查看宫位说明。", "day": "/screenshots/qimen-04-day.webp", "night": ""},
   ] },
-  { id: 'liuren-liuyao', title: '六壬与六爻', headline: '课式与卦象，\n各有观察之道。', description: '让不同的传统术数在同一处相遇。以课式或卦象为起点，沿着各自的体系深入，在切换视角中丰富自己的研习路径。', points: ['探索大六壬与小六壬', '对照六爻本卦与变卦', '阅读卦辞与爻辞'], slides: [
+  { id: 'liuren-liuyao', title: '六壬和六爻', headline: '课式与卦象，\n各有观察之道。', description: '让不同的传统术数在同一处相遇。以课式或卦象为起点，沿着各自的体系深入，在切换视角中丰富自己的研习路径。', points: ['探索大六壬与小六壬', '对照六爻本卦与变卦', '阅读卦辞与爻辞'], slides: [
     {"title": "大六壬", description: "从天地盘、四课与三传切入，结合占时、月将等起课信息，沿着课式结构展开研习。", points: ["天地盘与四课", "三传信息", "占时与月将"], "caption": "从天地盘、四课与三传展开研习。", "day": "/screenshots/liuren-liuyao-01-day.webp", "night": "/screenshots/liuren-liuyao-01-night.webp"},
     {"title": "小六壬", description: "用简洁的六宫盘面查看起课结果，同时对照干支与节气时间，为小六壬研习提供清晰的入口。", points: ["六宫盘面", "时间起课信息", "节气时间对照"], "caption": "查看小六壬盘面与起课信息。", "day": "/screenshots/liuren-liuyao-02-day.webp", "night": "/screenshots/liuren-liuyao-02-night.webp"},
     {"title": "六爻卦象", description: "并排对照本卦与变卦，查看六爻、六亲、世应及变化信息，在同一画面中展开卦象研习。", points: ["本卦与变卦", "六亲与世应", "爻位变化对照"], "caption": "对照本卦、变卦与六爻信息。", "day": "/screenshots/liuren-liuyao-03-day.webp", "night": "/screenshots/liuren-liuyao-03-night.webp"},

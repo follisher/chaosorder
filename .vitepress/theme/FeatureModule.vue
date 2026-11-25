@@ -57,16 +57,20 @@ function preloadNeighbors() {
 }
 watch([src, inView], preloadNeighbors, { flush: 'post' })
 
-let timer, observer, media
+let timer, observer, media, colorScheme
 function syncMotion(e) { reducedMotion.value = e.matches; if (e.matches) playing.value = false }
+function syncSystemTheme(event) { switchMode(event.matches ? 'night' : 'day') }
 onMounted(() => {
+  colorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+  syncSystemTheme(colorScheme)
+  colorScheme.addEventListener('change', syncSystemTheme)
   media = window.matchMedia('(prefers-reduced-motion: reduce)'); syncMotion(media); media.addEventListener('change', syncMotion)
   observer = new IntersectionObserver(entries => { inView.value = entries[0].isIntersecting }, { threshold: .25 }); observer.observe(root.value)
   timer = window.setInterval(() => {
     if (availableSlides.value.length > 1 && playing.value && inView.value && !hovered.value && !focused.value && !reducedMotion.value && !document.hidden) move(1)
   }, 5000)
 })
-onUnmounted(() => { clearInterval(timer); observer?.disconnect(); media?.removeEventListener('change', syncMotion) })
+onUnmounted(() => { clearInterval(timer); observer?.disconnect(); media?.removeEventListener('change', syncMotion); colorScheme?.removeEventListener('change', syncSystemTheme) })
 </script>
 
 <template>
